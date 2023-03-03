@@ -8,7 +8,7 @@ namespace WebApi.Controllers
     [ApiController]
     public class ContactController : ControllerBase
     {
-        private readonly IContactRepository repository;
+        public IContactRepository repository;
 
         public ContactController(IContactRepository _repository)
         {
