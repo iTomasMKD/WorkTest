@@ -5,10 +5,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Domain.Repository
 {
-    public class CountryRepoistory : RepositoryBase<Country>, ICountryRepository
+    public class CompanyRepoistory : RepositoryBase<Country>, ICountryRepository
     {
 
-        public CountryRepository(TestDbContext repositoryContext)
+        public CompanyRepoistory(TestDbContext repositoryContext)
         : base(repositoryContext)
         {
         }
