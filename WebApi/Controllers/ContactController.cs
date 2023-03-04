@@ -8,7 +8,7 @@ namespace WebApi.Controllers
     [ApiController]
     public class ContactController : ControllerBase
     {
-        public IContactRepository repository;
+        private IContactRepository repository;
 
         public ContactController(IContactRepository _repository)
         {
@@ -58,8 +58,8 @@ namespace WebApi.Controllers
         {
             try
             {
-                var Contact = await repository.GetContactWithDetailsAsync(id);
-                if (Contact == null)
+                var contact = await repository.GetContactWithDetailsAsync(id);
+                if (contact == null)
                 {
 
                     return NotFound();
@@ -67,7 +67,7 @@ namespace WebApi.Controllers
                 else
                 {
 
-                    return Ok(ContactResult);
+                    return Ok(contact);
                 }
             }
             catch (Exception ex)
